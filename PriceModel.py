@@ -40,6 +40,7 @@ st.write(" ")
 st.markdown("<h1 style='text-align: center;'>Cost Volume Profit Analysis</h1>", unsafe_allow_html=True)
 st.write(" ")
 st.markdown("<h3 style='text-align: center;'>Update the Inputs below to determine your target monthly sales volume</h3>", unsafe_allow_html=True)
+st.write("")
 # Create four columns for input fields
 col1, col2, col3, col4 = st.columns(4)
 
@@ -59,6 +60,7 @@ with col3:
 with col4:
     price_to_be_sold = st.number_input("Price to be sold", value=350, key="price_to_be_sold")
 
+st.divider()
 # Create slider input for "Quantity"
 quantity_range = st.slider("Quantity", 100, 5000, (100, 500))
 
@@ -82,7 +84,7 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
 
-st.markdown("<div style='text-align: center; background-color: #fafafa; padding: 20px; border-radius: 10px;'><h3>Break Even Number Of Sales</h3><h1 style='color: black;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; background-color: #fafafa; padding: 20px; border-radius: 10px;'><h3>Target Number of Sales</h3><h1 style='color: black;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
 st.write("")
 st.divider()
 st.write("")
