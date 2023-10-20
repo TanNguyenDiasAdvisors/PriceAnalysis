@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from bokeh.models.widgets import Div
 
 # Set the page configuration to 'wide'
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
+
 # Create a title and logo in the left corner
 st.markdown("""
     <style>
@@ -31,16 +31,7 @@ st.markdown("""
 # Create space below the title
 st.write(" ")
 
-def cook_breakfast():
-    msg = st.toast('Gathering Data...')
-    time.sleep(1)
-    msg.toast('Preping...')
-    time.sleep(1)
-    msg.toast('Ready!', icon = "🥞")
 
-if st.button('See Demo'):
-    cook_breakfast()
-    
 # Create four columns for input fields
 col1, col2, col3, col4 = st.columns(4)
 
@@ -83,12 +74,25 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
         
+st.markdown("<div style='text-align: center; background-color: #fafafa; padding: 20px; border-radius: 10px;'><h3>Break Even Number Of Sales</h3><h1 style='color: black;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
+    
+# Line chart with vertical axis as price and horizontal axis as sales
+# Showing Total Cost, Target Price, and Revenue
+chart_data = pd.DataFrame({
+    'Sales': sales,
+    'Total Cost': total_cost_values,
+    'Target Price': target_price_values,
+    'Revenue': revenue_values
+})
 
-
+st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
+st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
 
 URL_STRING = "https://www.dias-advisors.com/"
 
-st.markdown(
-    f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #080a33; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Connect With Dias</a>',
-    unsafe_allow_html=True
-)
+coll1, coll2, coll3, coll4, coll5 = st.columns(5)
+with coll3:
+    st.markdown(
+        f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #090b30; color: white; text-align: center; text-decoration: none; font-size: 15px; border-radius: 4px;">Connect With Dias</a>',
+        unsafe_allow_html=True
+    )
