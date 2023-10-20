@@ -2,31 +2,36 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+
 # Set the page configuration to 'wide'
 # st.set_page_config(layout="wide")
 
+banner_image = 'https://raw.githubusercontent.com/TanNguyenDiasAdvisors/PriceAnalysis/main/assets/banner.png'  # Replace with the path to your image
+st.image(banner_image, use_container_width=True)
+
+
 # Create a title and logo in the left corner
-st.markdown("""
-    <style>
-        .logo {
-            padding: 10px 0px;
-            margin: 0px;
-            text-align: left;
-        }
-        .title {
-            text-align: center;
-            font-size: 36px; /* Larger font size */
-        }
-        .inputs-header {
-            text-align: center;
-            font-size: 20px;
-        }
-    </style>
-    <div class="logo">
-        <img src="https://raw.githubusercontent.com/TheCircleGuy/streamlit-example/fbd4e7f51bfa5d98bb703b3ed81326164734da40/assets/logo.png" alt="Logo" width=100 height=100>
-    </div>
-    <h1 class="title">Cost Volume Profit Analysis</h1>
-    """, unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#         .logo {
+#             padding: 10px 0px;
+#             margin: 0px;
+#             text-align: left;
+#         }
+#         .title {
+#             text-align: center;
+#             font-size: 36px; /* Larger font size */
+#         }
+#         .inputs-header {
+#             text-align: center;
+#             font-size: 20px;
+#         }
+#     </style>
+#     <div class="logo">
+#         <img src="https://raw.githubusercontent.com/TheCircleGuy/streamlit-example/fbd4e7f51bfa5d98bb703b3ed81326164734da40/assets/logo.png" alt="Logo" width=100 height=100>
+#     </div>
+#     <h1 class="title">Cost Volume Profit Analysis</h1>
+#     """, unsafe_allow_html=True)
 
 # Create space below the title
 st.write(" ")
