@@ -6,8 +6,7 @@ import numpy as np
 # Set the page configuration to 'wide'
 # st.set_page_config(layout="wide")
 
-banner_image = 'https://raw.githubusercontent.com/TanNguyenDiasAdvisors/PriceAnalysis/main/assets/banner.png'  # Replace with the path to your image
-st.image(banner_image, use_container_width=True)
+st.markdown('<img src="https://raw.githubusercontent.com/TanNguyenDiasAdvisors/PriceAnalysis/main/assets/banner.png" style="width:100%;" />', unsafe_allow_html=True)
 
 
 # Create a title and logo in the left corner
