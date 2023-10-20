@@ -107,7 +107,7 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
 
-st.markdown("<div style='text-align: center; background-color: #fafafa; padding: 20px; border-radius: 10px;'><h3 style='color: #f89d13;'>Target Number of Sales</h3><h1 style='color: #f89d13;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; background-color: #f89d13; padding: 20px; border-radius: 10px;'><h3 style='color: #161638;'>Target Number of Sales</h3><h1 style='color: #161638;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
 st.write("")
 st.divider()
 st.write("")
