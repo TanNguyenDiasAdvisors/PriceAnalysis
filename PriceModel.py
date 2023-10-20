@@ -5,6 +5,29 @@ import numpy as np
 
 # Set the page configuration to 'wide'
 # st.set_page_config(layout="wide")
+# Set the theme to dark
+
+# st.set_page_config(
+#     page_title="Dias - Cost Volume Profit Analysis",
+#     page_icon="🧊",
+#     initial_sidebar_state="expanded",
+#     menu_items={
+#         'website': 'https://www.extremelycoolapp.com/help',
+#         'Linkedin': "https://www.linkedin.com/in/svenroering/",
+#     }
+# )
+
+st.set_page_config(
+    page_title="Dias - Cost Volume Profit Analysis",
+    page_icon="🧊",
+
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.linkedin.com/in/svenroering/',
+        'Report a bug': "https://www.linkedin.com/in/svenroering/",
+        'About': "https://www.linkedin.com/in/svenroering/"
+    }
+)
 
 st.markdown('<img src="https://raw.githubusercontent.com/TanNguyenDiasAdvisors/PriceAnalysis/main/assets/banner.png" style="width:100%;" />', unsafe_allow_html=True)
 
@@ -84,7 +107,7 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
 
-st.markdown("<div style='text-align: center; background-color: #fafafa; padding: 20px; border-radius: 10px;'><h3>Target Number of Sales</h3><h1 style='color: black;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; background-color: #fafafa; padding: 20px; border-radius: 10px;'><h3 style='color: #f89d13;'>Target Number of Sales</h3><h1 style='color: #f89d13;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
 st.write("")
 st.divider()
 st.write("")
@@ -98,14 +121,12 @@ chart_data = pd.DataFrame({
     'Revenue': revenue_values
 })
 
-st.markdown("<h3 style='text-align: center; color: #0d043b;'>Y-axis = currency, X-axis = sales volume</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #f89d13;'>Y-axis = currency, X-axis = sales volume</h3>", unsafe_allow_html=True)
 st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Total Cost + Profit  Target', 'Revenue']])
 
 URL_STRING = "https://www.linkedin.com/in/svenroering/"
 
 coll1, coll2, coll3, coll4, coll5 = st.columns(5)
 with coll3:
-    st.markdown(
-        f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #090b30; color: white; text-align: center; text-decoration: none; font-size: 15px; border-radius: 4px;">Connect With Dias</a>',
-        unsafe_allow_html=True
+    st.markdown(f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #f89d13; color: black; text-align: center; text-decoration: none; font-size: 15px; border-radius: 4px;"><strong>Connect With Dias</strong></a>', unsafe_allow_html=True
     )
