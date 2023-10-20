@@ -52,7 +52,7 @@ with col4:
     price_to_be_sold = st.number_input("Price to be sold", value=999, key="price_to_be_sold")
 
 # Create slider input for "Quantity"
-quantity_range = st.slider("Quantity", 100, 500, (100, 500))
+quantity_range = st.slider("Quantity", 100, 5000, (100, 500))
 
 # Calculate the optimal price to achieve the target profit
 
@@ -88,7 +88,7 @@ chart_data = pd.DataFrame({
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
 st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
 
-URL_STRING = "https://www.dias-advisors.com/"
+URL_STRING = "https://www.linkedin.com/in/svenroering/"
 
 coll1, coll2, coll3, coll4, coll5 = st.columns(5)
 with coll3:
